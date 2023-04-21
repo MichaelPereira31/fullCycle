@@ -1,0 +1,12 @@
+version: "2"
+packages:
+  - schema: "schema.sql"
+    queries: "slq/queries"
+    engine: "mysql"
+    gen:
+      go:
+        packages: "db"
+        out: "internal/infra/db"
+        overwrite:
+          - db_type: "decimal"
+            go_type: "float64"
